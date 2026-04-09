@@ -32,7 +32,7 @@ app.add_middleware(
 # ============================================================
 # LOAD MODEL ON STARTUP
 # ============================================================
-MODEL_PATH = "./phishing_pro_model"
+MODEL_PATH = "vignesh-mahankali/phishing-detector-pro"
 import os
 os.environ["TRANSFORMERS_NO_ADVISORY_WARNINGS"] = "1"
 THRESHOLD  = 0.75                     # confidence cutoff
