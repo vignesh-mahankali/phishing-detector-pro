@@ -4,6 +4,8 @@
 #   Deploy      : Render.com (free tier)
 # ============================================================
 
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -20,7 +22,9 @@ app = FastAPI(
     description="AI-powered phishing and scam message detector",
     version="1.0.0",
 )
-
+@app.get("/")
+def serve_ui():
+    return FileResponse("phishing_detector_ui_premium.html")
 # Allow requests from your web UI (CORS)
 app.add_middleware(
     CORSMiddleware,
